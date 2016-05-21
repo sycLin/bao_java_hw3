@@ -1,11 +1,15 @@
 all: TypingTutor
 
 TypingTutor:
-	if ! [ -d bin/ ];then mkdir bin;fi
-	javac -d bin src/TypingTutor.java
+	@if ! [ -d bin/ ];then mkdir bin;fi
+	@echo "compiling source files..."
+	@javac -d bin src/TypingTutor.java
+	@echo "compilation complete."
 
 run:
-	java -cp bin/ TypingTutor
+	@echo "running TypingTutor..."
+	@java -cp bin/ TypingTutor
 
 clean:
-	rm -rf bin
+	@echo "cleaning up..."
+	@rm -rf bin
